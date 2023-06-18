@@ -9,13 +9,6 @@
         <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
       </api:response-type>
     </api:endpoint>
-    <api:endpoint id="2">
-      <api:name>Blog</api:name>
-      <api:path>/blog</api:path>
-      <api:response-type>
-        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
-      </api:response-type>
-    </api:endpoint>
   </api:api>
   <meta:meta xmlns:meta="https://hcssmith.com/xsd/meta">
     <meta:title>hcssmith.com</meta:title>
@@ -23,27 +16,8 @@
   </meta:meta>
   <payload:payload type="description" xmlns:payload="https://hcssmith.com/xsd/payload"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <payload:image src="https://picsum.photos/640/360" caption="Tintagel Castle" />
     <payload:paragraph>
-        This contains some sort of <payload:anchor xlink:type="simple" xlink:href="/blog/page2">text.</payload:anchor>
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
-    </payload:paragraph>
-    <payload:paragraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis, nulla ut tincidunt viverra, arcu leo convallis justo, a pellentesque nisi mi id nibh. Sed sodales dapibus vulputate. Suspendisse potenti. In vestibulum dictum orci vel rhoncus. Nunc sagittis viverra neque, quis rutrum mauris gravida et. Vestibulum tempus gravida neque, eu congue ex posuere tincidunt. Morbi sed sagittis massa. Nulla pretium euismod consequat. Donec nec sapien porttitor tellus ullamcorper iaculis nec non leo. In hac habitasse platea dictumst. Suspendisse pulvinar, elit a porta cursus, sem nibh lacinia tellus, eu placerat nisl tellus vel erat. Cras sit amet lectus tincidunt elit dapibus convallis id non felis. Duis tempor justo eu eleifend luctus. 
+      This website contains my musings on various subjects. The website itself is prmarily build using <payload:anchor xlink:type="simple" xlink:href="https://www.w3.org/TR/xslt-10/">XSLT</payload:anchor> to transform a XML response, currently written manually into a webpage. It is my intention to write an XML processing library in <payload:anchor xlink:type="simple" xlink:href="https://odin-lang.org">Odin</payload:anchor>, this will then be used to form the basis of a simple but more dynmic site, with the UI being written in a combination of XSLT / CSS &amp; HTMX.
     </payload:paragraph>
   </payload:payload>
 </response>

@@ -10,7 +10,7 @@
       <li class="pure-menu-item">
         <a class="pure-menu-link">
           <xsl:attribute name="href">
-            <xsl:value-of select="api:endpoint" />
+            <xsl:value-of select="api:path" />
           </xsl:attribute>
           <xsl:value-of select="api:name" />
         </a>
