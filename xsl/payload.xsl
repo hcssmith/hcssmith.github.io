@@ -14,7 +14,7 @@
   xmlns:resp="https://hcssmith.com/xsd/response"
   xmlns:payload="https://hcssmith.com/xsd/payload">
   <div class="image">
-    <img>
+    <img width="500">
       <xsl:attribute name="src">
         <xsl:value-of select="./@src" />
       </xsl:attribute>
@@ -47,5 +47,16 @@
     </xsl:attribute>
     <xsl:apply-templates />
   </a>
+  </xsl:template>
+  
+  <xsl:template 
+  match="payload:heading"
+  xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:resp="https://hcssmith.com/xsd/response"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:payload="https://hcssmith.com/xsd/payload">
+  <h4>
+    <xsl:apply-templates />
+  </h4>
   </xsl:template>
 </xsl:stylesheet>

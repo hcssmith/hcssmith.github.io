@@ -16,6 +16,12 @@
   </meta:meta>
   <payload:payload type="description" xmlns:payload="https://hcssmith.com/xsd/payload"
     xmlns:xlink="http://www.w3.org/1999/xlink">
+  <payload:image src="/img/u0ewhn.jpg" caption="Clovelly, Devon"></payload:image>
+  <payload:heading>About me</payload:heading>
+  <payload:paragraph>
+    I am a big fan of using technologies outside of their recommeneded opertating paramters, and making use of older technologies that have, now been supplanted. In the case of this site, XSLT. 
+  </payload:paragraph>
+    <payload:heading>About this site</payload:heading>
     <payload:paragraph>
       This website contains my musings on various subjects. The website itself is prmarily build using <payload:anchor xlink:type="simple" xlink:href="https://www.w3.org/TR/xslt-10/">XSLT</payload:anchor> to transform a XML response, currently written manually into a webpage. It is my intention to write an XML processing library in <payload:anchor xlink:type="simple" xlink:href="https://odin-lang.org">Odin</payload:anchor>, this will then be used to form the basis of a simple but more dynmic site, with the UI being written in a combination of XSLT / CSS &amp; HTMX.
     </payload:paragraph>
