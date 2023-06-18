@@ -9,6 +9,13 @@
         <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
       </api:response-type>
     </api:endpoint>
+    <api:endpoint id="0">
+      <api:name>GitHub</api:name>
+      <api:path>https://github.com/hcssmith</api:path>
+      <api:response-type>
+        <api:wepage />
+      </api:response-type>
+    </api:endpoint>
   </api:api>
   <meta:meta xmlns:meta="https://hcssmith.com/xsd/meta">
     <meta:title>hcssmith.com</meta:title>
