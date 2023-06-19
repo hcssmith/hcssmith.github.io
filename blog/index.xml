@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/response.xsl"?>
+<response xmlns="https://hcssmith.com/xsd/response">
+  <api:api xmlns:api="https://hcssmith.com/xsd/api">
+    <api:endpoint id="0">
+      <api:name>Home</api:name>
+      <api:path>/</api:path>
+      <api:response-type>
+        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
+      </api:response-type>
+    </api:endpoint>
+    <api:endpoint id="1">
+      <api:name>Blog</api:name>
+      <api:path>/blog</api:path>
+      <api:response-type>
+        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
+      </api:response-type>
+    </api:endpoint>
+    <api:endpoint id="2">
+      <api:name>GitHub</api:name>
+      <api:path>https://github.com/hcssmith</api:path>
+      <api:response-type>
+        <api:wepage />
+      </api:response-type>
+    </api:endpoint>
+  </api:api>
+  <meta:meta xmlns:meta="https://hcssmith.com/xsd/meta">
+    <meta:title>hcssmith.com</meta:title>
+    <meta:tagline>Notes &amp; Articles written by me.</meta:tagline>
+  </meta:meta>
+  <payload:payload type="description" xmlns:payload="https://hcssmith.com/xsd/payload"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+  <payload:heading type="large">Blog</payload:heading>
+  <payload:article id="001">
+    <payload:title>Why I like XML</payload:title>
+    <payload:description>
+      <payload:paragraph>
+        Why XML is a lot more usefull than people give it credit for, and a case for XHTML
+      </payload:paragraph>
+    </payload:description>
+  </payload:article>
+  </payload:payload>
+</response>

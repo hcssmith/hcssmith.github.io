@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/response.xsl"?>
+<response xmlns="https://hcssmith.com/xsd/response">
+  <api:api xmlns:api="https://hcssmith.com/xsd/api">
+    <api:endpoint id="0">
+      <api:name>Home</api:name>
+      <api:path>/</api:path>
+      <api:response-type>
+        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
+      </api:response-type>
+    </api:endpoint>
+    <api:endpoint id="1">
+      <api:name>Blog</api:name>
+      <api:path>/blog</api:path>
+      <api:response-type>
+        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
+      </api:response-type>
+    </api:endpoint>
+    <api:endpoint id="2">
+      <api:name>GitHub</api:name>
+      <api:path>https://github.com/hcssmith</api:path>
+      <api:response-type>
+        <api:wepage />
+      </api:response-type>
+    </api:endpoint>
+  </api:api>
+  <meta:meta xmlns:meta="https://hcssmith.com/xsd/meta">
+    <meta:title>hcssmith.com</meta:title>
+    <meta:tagline>Notes &amp; Articles written by me.</meta:tagline>
+  </meta:meta>
+  <payload:payload type="description" xmlns:payload="https://hcssmith.com/xsd/payload"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+  <payload:heading type="large">Why I like XML</payload:heading>
+  <payload:heading>Introduction</payload:heading>
+  <payload:paragraph>
+  XML is useful. It is a extremely felxible way of representing textual data, and related metadata. This makes it perfect, as far as I am concerned, for representing data for non concurrent access. It allows you to encode more than just the pure data, but the related metadata as well. See the followinf for example.
+  </payload:paragraph>
+  <payload:paragraph type="code" lang="xml">
+    &lt;api:endpoint id="0"&gt;
+      &lt;api:name>Home&lt;api:name&gt;
+      &lt;api:path>/&lt;api:path&gt;
+      &lt;api:response-type&gt;
+        &lt;api:api-type-xml namespace="https://hcssmith.com/xsd/response" /&gt;
+      &lt;api:response-type&gt;
+    &lt;/api:endpoint&gt;
+  </payload:paragraph>
+  <payload:paragraph>
+    This is how I specify a menu entry on this site. From this I can use XSLT to generate the menu for my website, or in theory, I should be able to create a program that will be able to take this specification and use it to automaticlly create the API access.
+  </payload:paragraph>
+  <payload:paragraph>...tbc</payload:paragraph>
+  </payload:payload>
+</response>

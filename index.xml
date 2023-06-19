@@ -9,7 +9,14 @@
         <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
       </api:response-type>
     </api:endpoint>
-    <api:endpoint id="0">
+    <api:endpoint id="1">
+      <api:name>Blog</api:name>
+      <api:path>/blog</api:path>
+      <api:response-type>
+        <api:api-type-xml namespace="https://hcssmith.com/xsd/response" />
+      </api:response-type>
+    </api:endpoint>
+    <api:endpoint id="2">
       <api:name>GitHub</api:name>
       <api:path>https://github.com/hcssmith</api:path>
       <api:response-type>
@@ -26,7 +33,7 @@
   <payload:image src="/img/u0ewhn.jpg" caption="Clovelly, Devon"></payload:image>
   <payload:heading>About me</payload:heading>
   <payload:paragraph>
-    I am a big fan of using technologies outside of their recommeneded opertating paramters, and making use of older technologies that have, now been supplanted. In the case of this site, XSLT. 
+      I am a big fan of using technologies outside of their recommeneded opertating paramters, and making use of older technologies that have, now been supplanted. In the case of this site, XSLT. One thing that I should quite like to do would be attempting to recreate <payload:anchor xlink:type="simple" xlink:href="http://www.o-xml.org/">o:XML</payload:anchor> an XML based prorgamming language. Though XML seems to be much derrided these days, I find it to be an elegant way of expressing data, and to be a concrete syntax to properly validate.
   </payload:paragraph>
     <payload:heading>About this site</payload:heading>
     <payload:paragraph>

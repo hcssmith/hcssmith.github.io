@@ -31,9 +31,24 @@
   xmlns="http://www.w3.org/1999/xhtml" 
   xmlns:resp="https://hcssmith.com/xsd/response"
   xmlns:payload="https://hcssmith.com/xsd/payload">
+  <xsl:choose>
+    <xsl:when test="@type='code'">
+      <pre>
+        <code>
+          <xsl:attribute name="class">
+            language-<xsl:value-of select="./@lang" />
+          </xsl:attribute>
+        <xsl:apply-templates />
+      </code>
+      </pre>
+
+  </xsl:when>
+  <xsl:otherwise>
   <p>
     <xsl:apply-templates />
   </p>
+</xsl:otherwise>
+  </xsl:choose>
   </xsl:template>
   <xsl:template 
   match="payload:anchor"
@@ -55,8 +70,46 @@
   xmlns:resp="https://hcssmith.com/xsd/response"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   xmlns:payload="https://hcssmith.com/xsd/payload">
+  <xsl:choose>
+    <xsl:when test="@type='large'">
+      <h2>
+        <xsl:apply-templates />
+      </h2>
+    </xsl:when>
+    <xsl:otherwise>
+      <h4>
+        <xsl:apply-templates />
+      </h4>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+  <xsl:template 
+  match="payload:article"
+  xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:resp="https://hcssmith.com/xsd/response"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:payload="https://hcssmith.com/xsd/payload">
+  <div class="article">
+    <xsl:apply-templates />
+    <a>
+      <xsl:attribute name="href">
+        /blog/<xsl:value-of select="./@id" />
+      </xsl:attribute>
+      [Read More...]
+    </a>
+  </div>
+  </xsl:template>
+
+  <xsl:template 
+  match="payload:title"
+  xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:resp="https://hcssmith.com/xsd/response"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:payload="https://hcssmith.com/xsd/payload">
   <h4>
     <xsl:apply-templates />
   </h4>
   </xsl:template>
+
 </xsl:stylesheet>
