@@ -47,6 +47,10 @@
   <payload:paragraph>
     This is how I specify a menu entry on this site. From this I can use XSLT to generate the menu for my website, or in theory, I should be able to create a program that will be able to take this specification and use it to automaticlly create the API access.
   </payload:paragraph>
+  <payload:heading>XSLT - Separate Structure from Data</payload:heading>
+  <payload:paragraph>
+    Another reason that I like XML / XSLT is that it allows me to have the data provided and use a stylesheet to transform an API response into am XHTML document.
+  </payload:paragraph>
   <payload:paragraph>...tbc</payload:paragraph>
   </payload:payload>
 </response>
