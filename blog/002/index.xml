@@ -30,22 +30,10 @@
   </meta:meta>
   <payload:payload type="description" xmlns:payload="https://hcssmith.com/xsd/payload"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-  <payload:heading type="large">Blog</payload:heading>
-  <payload:article id="001">
-    <payload:title>Why I like XML</payload:title>
-    <payload:description>
-      <payload:paragraph>
-        Why XML is a lot more usefull than people give it credit for, and a case for XHTML
-      </payload:paragraph>
-    </payload:description>
-  </payload:article>
-  <payload:article id="002">
-    <payload:title>Styling the Indeed XML feed to highlight errors</payload:title>
-    <payload:description>
-      <payload:paragraph>
-        The process I have gone through to style indeeds XML feed in order to highlight any potential errors.
-      </payload:paragraph>
-    </payload:description>
-  </payload:article>
+  <payload:heading type="large">Styling the Indeed XML feed to highlight errors</payload:heading>
+  <payload:heading>Purpose</payload:heading>
+  <payload:paragraph>
+      One of the things that I often have to do at work is check items on the indeed XML feed, and ensure that there is nothing missing. For larger feeds this can become quite awkward at times. An <payload:anchor xlink:type="simple" xlink:href="/blog/002/static/samplefeed.xml">example</payload:anchor> can be found here.
+  </payload:paragraph>
   </payload:payload>
 </response>
