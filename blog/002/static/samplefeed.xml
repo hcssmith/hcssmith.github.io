@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="/xsl/indeed.xsl"?>
+<?xml-stylesheet type="text/xsl" href="/xsl/indeed/indeed.xsl"?>
 <source>
   <publisher>ATS Name</publisher>
   <publisherurl>http://www.atssite.com</publisherurl>

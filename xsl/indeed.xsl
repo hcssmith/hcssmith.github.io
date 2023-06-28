@@ -31,7 +31,7 @@
               <tr>
                 <td>Date</td>
                 <td><xsl:value-of select="date" /></td>
-                <td>required</td>
+                <td>required - <a href="https://en.wikipedia.org/wiki/ISO_8601">format</a></td>
               </tr>
               <tr>
                 <td>Reference Number</td>
@@ -42,6 +42,11 @@
                 <td>Requisition Id</td>
                 <td><xsl:value-of select="requisitionid" /></td>
                 <td>required</td>
+              </tr>
+              <tr>
+                <td>API Job Id</td>
+                <td><xsl:value-of select="apijobid" /></td>
+                <td>not required</td>
               </tr>
               <tr>
                 <td>URL</td>
@@ -69,11 +74,6 @@
                 <td>required</td>
               </tr>
               <tr>
-                <td>URL</td>
-                <td><xsl:value-of select="url" /></td>
-                <td>required</td>
-              </tr>
-              <tr>
                 <td>Country</td>
                 <td><xsl:value-of select="country" /></td>
                 <td>required</td>
@@ -81,12 +81,12 @@
               <tr>
                 <td>Postcode</td>
                 <td><xsl:value-of select="postalcode" /></td>
-                <td>required</td>
+                <td>required if on client side</td>
               </tr>
               <tr>
                 <td>Address</td>
                 <td><xsl:value-of select="address" /></td>
-                <td>required</td>
+                <td>required if on client side</td>
               </tr>
               <tr>
                 <td>Email</td>
