@@ -5,19 +5,17 @@
 
 ## layout
         
-        TITLE
-|--------------------------
-|Job title search box
-|--------------------------
-Job title
+            TITLE
+    |---------------------|
+    |Job title search box |
+    |---------------------|
+    | Job title           |
+    |---------------------|
+    | elemnet id|content  |
+    | explaination        |
+    |---------------------|
+    ...
 
-|-------------------------|
-|elemnet id|content     |
-| explaination          |
-|-------------------------
-...
-
--------------------------
 
 
 ## todo
