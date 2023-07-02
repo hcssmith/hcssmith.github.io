@@ -78,20 +78,65 @@ This action can include candidate review, job update, and so on.</xsl:variable>
   <xsl:template match="/" xmlns="http://www.w3.org/1999/xhtml">
     <html>
       <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/base-min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css" />
         <style>
-          .job ul li::before {
-          content: attr(data-attr-id) ':';
+          #title {
+            margin:auto;
+            text-align:center;
+          }
+
+          .job h3 {
+            text-align: center;
+          }
+
+          .job {
+            width:70%;
+            margin:auto;
+            border: 2px solid black;
+            padding: 10px;
+          }
+
+          .job-field {
+            padding: 10px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+          }
+
+          .job-element-name {
+            font-size: 15pt;
+            text-align: center;
+          }
+          .job-element-content {
+            font-size: 15pt;
+            text-align: center;
+          }
+
+          .required-found {
+            color:green;
+          }
+          .required-missing {
+            color:red;
+          }
+          .not-required-found {
+            color:green;
+          }
+          .not-required-missing {
+            color:yellow;
           }
         </style>
       </head>
       <body>
-        <h1>Indeed XML feed</h1>
+        <h1 id="title">Indeed XML feed</h1>
+        <h3>Search for job title</h3> 
+        <input type="text"></input>
         <div class="job-list">
           <xsl:for-each select="/source/job">
             <div class="job">
 
               <h3><xsl:value-of select="title" /></h3>
-              <ul>
+              <div class="job-fields">
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">date</xsl:with-param>
                   <xsl:with-param name="required">yes</xsl:with-param>
@@ -182,13 +227,13 @@ This action can include candidate review, job update, and so on.</xsl:variable>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">lastactivitydate</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">indeed-apply-data</xsl:with-param>
                   <xsl:with-param name="required">yes</xsl:with-param>
                 </xsl:call-template> 
-              </ul>
+              </div>
             </div>
           </xsl:for-each>
         </div>
@@ -199,25 +244,36 @@ This action can include candidate review, job update, and so on.</xsl:variable>
   <xsl:template name="job-field" xmlns="http://www.w3.org/1999/xhtml">
     <xsl:param name="field" /> <!--xml field name-->
     <xsl:param name="required" /><!--yes or no-->
-    <li>
-      <xsl:attribute name="data-attr-id">
-        <xsl:value-of select="$field" />
-      </xsl:attribute>
-
-      <xsl:choose>
-        <xsl:when test="not(./*[local-name() = $field])">
-          <xsl:attribute name="class">required-missing</xsl:attribute>
-         Element not found... 
-        </xsl:when>
-        <xsl:otherwise>
-          <xsl:attribute name="class">required-found</xsl:attribute>
-          <xsl:value-of select="./*[local-name() = $field]" />
-        </xsl:otherwise>
-      </xsl:choose>
+    <div class="job-field"> 
+      <div class="pure-g">
+        <div class="job-element-name pure-u-1-2">
+          <p><xsl:value-of select="$field" /></p>
+        </div>
+        <div class="job-element-content pure-u-1-2">
+          <p><xsl:choose>
+            <xsl:when test="not(./*[local-name() = $field])">
+              <xsl:choose>
+                <xsl:when test="$required = 'yes'">
+                  <xsl:attribute name="class">required-missing</xsl:attribute>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:attribute name="class">not-required-missing</xsl:attribute>
+                </xsl:otherwise>
+              </xsl:choose>
+              Element not found... 
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:attribute name="class">required-found</xsl:attribute>
+              <xsl:value-of select="./*[local-name() = $field]" />
+            </xsl:otherwise>
+          </xsl:choose>
+          </p>
+        </div>
+      </div>
       <xsl:variable name="description" select="$vars[@name = $field]" />
-      <p class="desc"> 
-          <xsl:copy-of select="$description"/>
-      </p>
-    </li>
+      <div class="job-element-description"> 
+        <xsl:copy-of select="$description/text() | $description/*"/>
+      </div>
+    </div>
   </xsl:template>
 </xsl:stylesheet>
