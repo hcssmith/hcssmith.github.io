@@ -34,6 +34,11 @@
   <payload:heading>Purpose</payload:heading>
   <payload:paragraph>
       One of the things that I often have to do at work is check items on the indeed XML feed, and ensure that there is nothing missing. For larger feeds this can become quite awkward at times. An <payload:anchor xlink:type="simple" xlink:href="/blog/002/static/samplefeed.xml">example</payload:anchor> can be found here.
-  </payload:paragraph>
+    </payload:paragraph>
+    <payload:heading>Usage</payload:heading>
+    <payload:paragraph>Add the following code to the xml file, ensure that it is the second line in the document</payload:paragraph>
+    <payload:paragraph type="code" lang="xml">&lt;?xml-stylesheet type="text/xsl" href="https://hcssmith.com/xsl/indeed/indeed.xsl"?&gt;</payload:paragraph>
+  <payload:heading>The below process does not yet work...</payload:heading>
+  <payload:widget type="indeed-styler" />
   </payload:payload>
 </response>

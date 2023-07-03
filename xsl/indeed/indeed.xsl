@@ -72,7 +72,7 @@ For additional text that you can include in the job, see XML feed FAQ. </xsl:var
 <xsl:variable name="lastactivitydate">Most recent timestamp of any action that your system made to this job.
 
 This action can include candidate review, job update, and so on.</xsl:variable> 
-<xsl:variable name="indeed-apply-data"></xsl:variable> 
+<xsl:variable name="indeed-apply-data">URL validator to be developed</xsl:variable> 
 <xsl:variable name="vars" select="document('')/*/xsl:variable" />
   
   <xsl:template match="/" xmlns="http://www.w3.org/1999/xhtml">
@@ -123,15 +123,48 @@ This action can include candidate review, job update, and so on.</xsl:variable>
             color:green;
           }
           .not-required-missing {
-            color:yellow;
+            color:orange;
           }
+
+          #search-box {
+            width: calc(70% - 60px);
+            margin: auto;
+            text-align: center;
+            display: block;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 12px 20px 12px 40px;
+          }
+
+
         </style>
+        <script>
+
+function filterScreen() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search-box');
+  filter = input.value.toUpperCase();
+  jobList = document.getElementById("job-list");
+  jobs = jobList.getElementsByClassName('job');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i &lt; jobs.length; i++) {
+    title = jobs[i].getElementsByTagName("h3")[0];
+    txtValue = title.textContent || title.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      jobs[i].style.display = "";
+    } else {
+      jobs[i].style.display = "none";
+    }
+  }
+}
+        </script>
       </head>
       <body>
         <h1 id="title">Indeed XML feed</h1>
-        <h3>Search for job title</h3> 
-        <input type="text"></input>
-        <div class="job-list">
+        <input id="search-box" placeholder="Search for position name" onkeyup="filterScreen()" type="text"></input>
+        <div id="job-list">
           <xsl:for-each select="/source/job">
             <div class="job">
 
@@ -151,7 +184,7 @@ This action can include candidate review, job update, and so on.</xsl:variable>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">apijobid</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">url</xsl:with-param>
@@ -179,11 +212,11 @@ This action can include candidate review, job update, and so on.</xsl:variable>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">postalcode</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">streetaddress</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">email</xsl:with-param>
@@ -195,35 +228,35 @@ This action can include candidate review, job update, and so on.</xsl:variable>
                 </xsl:call-template>
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">salary</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">education</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">jobtype</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">category</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">experience</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">expirationdate</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">tracking_url</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">remotetype</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">lastactivitydate</xsl:with-param>
@@ -231,7 +264,7 @@ This action can include candidate review, job update, and so on.</xsl:variable>
                 </xsl:call-template> 
                 <xsl:call-template name="job-field">
                   <xsl:with-param name="field">indeed-apply-data</xsl:with-param>
-                  <xsl:with-param name="required">yes</xsl:with-param>
+                  <xsl:with-param name="required">no</xsl:with-param>
                 </xsl:call-template> 
               </div>
             </div>
